@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import reviews from "./data";
-
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
+import { FaRandom } from "react-icons/fa";
 function InfoComponent() {
   const [index, setIndex] = useState(0);
   const { id, name, image, job, text } = reviews[index];
@@ -30,13 +31,23 @@ function InfoComponent() {
 
   return (
     <div key={id} className="item-container">
-      <p>{name}</p>
+      <h3>{name}</h3>
       <img src={image} alt={name} />
-      <p>{job}</p>
+      <h4>{job}</h4>
       <p>{text}</p>
-      <button onClick={prevPerson}> prev </button>
-      <button onClick={nextPerson}> next </button>
-      <button onClick={surprise}>Surprise me</button>
+      <div className="btn-area">
+        <button onClick={prevPerson}>
+          {" "}
+          <AiOutlineArrowLeft />{" "}
+        </button>
+        <button onClick={nextPerson}>
+          {" "}
+          <AiOutlineArrowRight />{" "}
+        </button>
+      </div>
+      <button onClick={surprise} className="surprise-btn">
+        surprise me
+      </button>
     </div>
   );
 }

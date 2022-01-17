@@ -4,10 +4,13 @@ import { useState } from "react";
 
 function App() {
   return (
-    <div className="container">
-      <h2>Our reviews</h2>
-      <InfoComponent />
-    </div>
+    <main>
+      <div className="container">
+        <h2>Our reviews</h2>
+        <hr />
+        <InfoComponent />
+      </div>
+    </main>
   );
 }
 
